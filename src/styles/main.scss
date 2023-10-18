@@ -1,0 +1,86 @@
+@use 'functions';
+
+// Globals
+:root {
+  // Colors
+  --bg-color: #999999;
+  --dark-gray: #121212;
+  --text-color: #ffffff;
+  --primary-js-on: #ebce81;
+  --primary-js-off: #db82eb;
+  --secondary: #81ebca;
+  // Layout
+  --top-bar-height: 150px;
+  --grid-padding: 10px; // For container around grid + grid items
+  --mobile-width: 450px; // Scale everything dynamically below this width
+}
+
+body {
+  font-family: Verdana, sans-serif;
+}
+
+// This removes margin when usin data property "extract_html"
+// in the object pages
+p {
+  margin-block: 0;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-family: Georgia, serif;
+}
+h1 {
+  font-size: functions.toRem(36);
+  @media screen and (max-width: '450px') {
+    font-size: functions.toRem(30);
+  }
+}
+h2 {
+  font-size: functions.toRem(32);
+  @media screen and (max-width: '450px') {
+    font-size: functions.toRem(26);
+  }
+}
+h3 {
+  font-size: functions.toRem(28);
+  @media screen and (max-width: '450px') {
+    font-size: functions.toRem(22);
+  }
+}
+h4 {
+  font-size: functions.toRem(24);
+  @media screen and (max-width: '450px') {
+    font-size: functions.toRem(18);
+  }
+}
+h5 {
+  font-size: functions.toRem(20);
+  @media screen and (max-width: '450px') {
+    font-size: functions.toRem(14);
+  }
+}
+h6 {
+  font-size: functions.toRem(16);
+  @media screen and (max-width: '450px') {
+    font-size: functions.toRem(10);
+  }
+}
+
+// A helper function to create truncate classes for 1, 2, or 3 lines of text
+@for $i from 1 through 3 {
+  .truncate-#{$i} {
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
