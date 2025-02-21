@@ -1,6 +1,6 @@
 # SvelteKit demo
 
-A small demo app build using Svelte and SvelteKit.
+A small demo app build using Svelte and SvelteKit running in [github.io](https://harmanen.github.io/). See also the [demo video](https://github.com/harmanen/sveltekit-demo/tree/main/video) where it is shown that this also works with JavaScript turned off.
 
 ## Requisites
 
